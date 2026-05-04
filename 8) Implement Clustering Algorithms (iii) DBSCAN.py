@@ -6,4 +6,6 @@ df = pd.read_csv("ai_ml_lab_data.csv")
 data = df[['amount','frequency']]
 
 model = DBSCAN(eps=10, min_samples=2)
-print(model.fit_predict(data))
+labels = model.fit_predict(data)
+
+print(labels)
