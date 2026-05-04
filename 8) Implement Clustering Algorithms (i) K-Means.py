@@ -6,6 +6,6 @@ df = pd.read_csv("ai_ml_lab_data.csv")
 data = df[['amount','frequency']]
 
 model = KMeans(n_clusters=2, n_init=10)
-model.fit(data)
+df['Cluster'] = model.fit_predict(data)
 
-print(model.labels_)
+print(df[['amount','frequency','Cluster']])
